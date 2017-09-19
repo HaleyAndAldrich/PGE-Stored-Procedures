@@ -287,7 +287,7 @@ Create procedure hai.sp_hai_pge_air_risk(
 		
 				end
 
-			select * from ##risk
+	
 
 			if object_id('tempdb..##risk') is not null drop table ##risk
 			IF OBJECT_ID('tempdb..#r') IS NOT NULL drop table #r

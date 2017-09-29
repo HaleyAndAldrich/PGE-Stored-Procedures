@@ -1,4 +1,5 @@
-
+use equis
+go
 
 
 exec hai.sp_hai_pge_air_risk
@@ -18,10 +19,8 @@ exec hai.sp_hai_pge_air_risk
 		  null, --@matrix_codes varchar (500),
 		 'ug/m3', --@target_unit varchar(100) = 
 		  'RL', --@limit_type varchar (10) =
-		'pge-sl-potrero-aa-noncarc', -- @action_level_codes varchar (500) =
+		'pge-sl-potrero-aa-noncarc|pge-sl-potrero-aa-carc', -- @action_level_codes varchar (500) =
 		 '# Q', --@user_qual_def varchar (10) =
 		 'y', --@show_val_yn varchar(10) =
-		  null, --@coord_type varchar (20),
-		 'N', --@detects_only varchar (10) =   /*returns all samples/chemicals if any one sample had that chemcial detected*/
 		 'AVG', --@aggregate varchar (20) = 
 		1 -- @dispersion_factor float = 1

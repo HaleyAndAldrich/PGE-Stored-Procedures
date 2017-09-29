@@ -43,6 +43,7 @@ alter procedure hai.sp_hai_pge_legal_requests
 		create table #r 
 		(
 			 facility_id int
+			,task_code varchar (50)
 			,APN varchar (50)
 			,[Address] varchar (200)
 			,sys_loc_code varchar (20)
@@ -117,7 +118,8 @@ alter procedure hai.sp_hai_pge_legal_requests
 		begin try
 		raiserror( 'Begin inserting #r',0,1) with nowait
 		insert into #r(
-			 facility_id 
+			 facility_id
+			,task_code
 			,APN 
 			,[Address] 
 			,sys_loc_code 
@@ -190,6 +192,7 @@ alter procedure hai.sp_hai_pge_legal_requests
 
 		select 
 			 l.facility_id 
+			,s.task_code
 			,APN 
 			,[Address] 
 			,l.sys_loc_code 

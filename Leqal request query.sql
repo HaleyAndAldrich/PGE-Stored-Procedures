@@ -71,7 +71,7 @@ alter procedure hai.sp_hai_pge_legal_requests
 			,organic_yn varchar (10)
 			,parent_sample_code varchar (50)
 			,lab_sample_id varchar (20)
-			,instrument_id varchar (20)
+			,instrument_id varchar (60)
 			,dilution_factor varchar (10)
 			,qc_spike_recovery varchar (20)
 			,test_batch_id  varchar (20)
@@ -104,7 +104,7 @@ alter procedure hai.sp_hai_pge_legal_requests
 			,custom_field_1 varchar (255)
 			,custom_field_2 varchar (255)
 			,custom_field_3 varchar (255)
-			,remark varchar( 255)
+			,remark varchar(2000)
 			,dqm_remark varchar (10)
 			,desorb_efficiency varchar (10)
 			,value_type varchar (10)
@@ -254,12 +254,12 @@ alter procedure hai.sp_hai_pge_legal_requests
 			,r.custom_field_2 
 			,r.custom_field_3 
 			,r.remark  
-			,r.dqm_remark 
-			,r.desorb_efficiency 
-			,value_type 
-			,stat_type 
-			,r.custom_field_4 
-			,r.custom_field_5 
+			,null --r.dqm_remark 
+			,null --r.desorb_efficiency 
+			,null --value_type 
+			,null --stat_type 
+			,null --r.custom_field_4 
+			,null --r.custom_field_5 
 			--,validated_yn 
 		from 
 			(select

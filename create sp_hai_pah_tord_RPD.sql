@@ -35,7 +35,7 @@ alter procedure hai.sp_hai_PAH_TorD_RPD (
 		inner join rt_analyte ra on r.cas_rn= ra.cas_rn
 		inner join dt_test t on r.facility_id = t.facility_id and r.test_id = t.test_id
 		inner join dt_sample s on t.facility_id = s.facility_id and t.sample_id = s.sample_id
-		inner join (select cas_rn, total_or_dissolved as fraction, analytic_method, chemical_name from rt_mth_anl_group_member where method_analyte_group_code in ('pge GW pahs (dissolved)','pge gw pahs (total)')) mg
+		inner join (select cas_rn, total_or_dissolved as fraction, analytic_method, chemical_name from rt_mth_anl_group_member where method_analyte_group_code in ('PGE-GW-Alk-PAHs-051517')) mg
 		on r.cas_rn = mg.cas_rn and t.fraction = mg.fraction and t.analytic_method = mg.analytic_method
 		and r.facility_id = @facility_id
 		and task_code in(select cast(value as varchar (100)) from fn_split(@task_codes))
